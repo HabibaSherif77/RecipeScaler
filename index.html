@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Smart Recipe Scaler</title>  
+</head>
+<body>
+    <h1>Calculate Your Recipe</h1>
+
+    <div class="input-section">
+        <label for="recipe-name">Recipe Name:</label>
+        <input type="text" id="recipe-name" placeholder="Enter Your Recipe Name (e.g., Pancakes)">
+        <br><br>
+        <label for="original-servings">Original Recipe Serves (People):</label>
+        <input type="number" id="original-servings" value="1" min="1">
+    </div>
+
+    <div class="input-section">
+        <h3>Ingredients:</h3>
+        <div id="ingredients-container">
+            <div class="ingredients-row">
+                <input type="text" placeholder="Component Name" class="ing-name">
+                <input type="number" placeholder="Qty" class="ing-amount" min="0" step="any">
+                <select class="ing-unit">
+                    <option value="g">g</option>
+                    <option value="kg">kg</option>
+                    <option value="ml">ml</option>
+                    <option value="l">l</option>
+                    <option value="cup">cup(s)</option>
+                    <option value="tbsp">tbsp</option>
+                    <option value="tsp">tsp</option>
+                    <option value="piece">piece(s)</option>
+                </select>
+                <button type="button" class="remove-btn">×</button>
+            </div>
+        </div>
+        <button id="add-ingredient">Add Ingredient +</button>
+    </div>
+
+    <div class="control-section">
+        <label for="target-servings">I want to cook for (People):</label>
+        <input type="number" id="target-servings" value="1" min="1">
+    </div>
+
+    <div class="actions-section">
+      <button type="button" id="calc-btn">Calculate Results</button>
+      <button type="button" id="save-btn" class="save-btn">💾 Save Recipe</button>
+    </div>
+
+    <div id="results-section">
+      <h3>New Quantities:</h3>
+      <table>
+       <thead>
+        <tr>
+           <th>Component</th>
+           <th>Original Quantity</th>
+           <th>New Quantity</th>
+        </tr>
+       </thead>
+       <tbody id="results-body">
+       </tbody>
+      </table>
+      <p id="placeholder-text" class="placeholder-text">Add ingredients and click Calculate to see results...</p>
+    </div>
+
+    <!-- 📍 قسم الوصفات المحفوظة -->
+    <div class="input-section saved-section">
+        <h3>Saved Recipes 📚</h3>
+        <ul id="saved-list" class="saved-list">
+            <!-- هتظهر الوصفات المحفوظة هنا -->
+        </ul>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
